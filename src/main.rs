@@ -65,8 +65,60 @@ fn main() {
     let s3:String = "Language".to_string();
     let mut s4:String = "New Language".to_string();
 
-    FirstFunction();
-    println!("{}", Add(1, 20));
+    // 変更可
+    s4 = "Pass!".to_string();
+    //println!("{}", s4);
+
+    //FirstFunction();
+    //println!("{}", Add(1, 20));
+
+    // シャドーイング
+    let n:i32 = 10;
+    //println!("{}", n);
+    {
+        // スコープ
+        let n:i32 = 20;
+        //println!("{}", n);
+    }
+    //println!("{}", n);
+
+    let x:i32 = 10;
+    if x > 0 {
+        println!("OK");
+    }
+
+    // Rustの基本概念として、式は返したり、変数に束縛したりできる
+
+    // match→Swith文みたいなもの    
+    let x:i32 = 0;
+    match x {
+        0 => println!("This is Zero"),
+        1 => {
+            println!("This is One");
+            println!("This is One");
+        },
+        _=> println!("Other")
+    };
+
+    // loop → 無限ループ
+    //loop {
+        //println!("Hello");
+    //}
+
+    // while 
+    let mut cnt:i32 = 0;
+    //while cnt <= 10 {
+      //  println!("{}", cnt);
+        //cnt+=1;
+    //}
+
+    // for 
+    for i in [10, 20, 30] {
+        println!("{}", i);
+    }
+
+
+
 
 }
 
